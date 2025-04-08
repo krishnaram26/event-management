@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evendz</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">Evendz</div>
+        <!-- Update the nav-links div -->
+        <div class="nav-links">
+            <a href="#" class="active">Home</a>
+            <a href="#">Contact Us</a>
+            <a href="admin.html">Admin</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <h1 class="main-title">Events</h1>
+        <h2 class="subtitle">of SRPTC</h2>
+
+        <!-- Events Grid -->
+        <!-- Update the Tech Summit Card to use dynamic data -->
+        <div class="events-grid">
+            <div class="event-card" data-event-id="2">
+                <img src="https://images.unsplash.com/photo-1540039155733-5bb30b53aa14?w=500" alt="Event Image">
+                <div class="event-details">
+                    <h3>Event Name</h3>
+                    <p>Event description goes here...</p>
+                    <div class="event-info">
+                        <div class="info-group">
+                            <span>Time:</span>
+                            <span>10:00 AM</span>
+                        </div>
+                        <div class="info-group">
+                            <span>Place:</span>
+                            <span>Main Hall</span>
+                        </div>
+                        <div class="info-group">
+                            <span>Date:</span>
+                            <span>2024-02-15</span>
+                        </div>
+                        <div class="info-group">
+                            <span>Price:</span>
+                            <span>15₹/-</span>
+                        </div>
+                    </div>
+                    <div class="button-group">
+                        <button class="btn-view">View Details</button>
+                        <button class="btn-register" onclick="window.location.href='register.html?event=2'">Register</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Event Popup -->
+    <div class="event-popup" id="eventPopup">
+        <div class="popup-content">
+            <button class="close-popup">&times;</button>
+            <h1 class="popup-title">Event Name</h1>
+            
+            <div class="popup-description">
+                <p></p>
+            </div>
+    
+            <div class="event-details">
+                <div class="detail-row">
+                    <i class="far fa-calendar"></i>
+                    <div class="detail-info">
+                        <span>Date: </span>
+                        <span id="popupDate"></span>
+                    </div>
+                </div>
+    
+                <div class="detail-row">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div class="detail-info">
+                        <span>Venue: </span>
+                        <span id="popupVenue"></span>
+                    </div>
+                </div>
+    
+                <div class="detail-row">
+                    <i class="fas fa-dollar-sign"></i>
+                    <div class="detail-info">
+                        <span>Price: </span>
+                        <span id="popupPrice"></span>
+                    </div>
+                </div>
+    
+                <div class="coordinators-section">
+                    <h3><i class="fas fa-users"></i> Co-ordinators</h3>
+                    <ul id="coordinatorsList"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

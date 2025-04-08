@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Evendz</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/register.css">
+    <script src="js/register.js" defer></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">Evendz</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="#">Contact Us</a>
+            <a href="#" class="active">Register</a>
+        </div>
+    </nav>
+
+    <main class="register-container">
+        <h1>Register For</h1>
+        <h2 id="eventName">Cognito Clash of NGP College</h2>
+
+        <!-- Update the form tag to use POST method -->
+        <form id="registrationForm" class="registration-form" method="POST" action="php/register.php">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="regno">Regno:</label>
+                <input type="text" id="regno" name="regno" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <!-- Update the phone input field -->
+            <div class="form-group">
+                <label for="phone">Phone No:</label>
+                <input type="tel" 
+                       id="phone" 
+                       name="phone" 
+                       pattern="[0-9]*" 
+                       maxlength="10" 
+                       onkeypress="return (event.charCode >= 48 && event.charCode <= 57)"
+                       required>
+            </div>
+
+            <div class="form-group">
+                <label for="college">College:</label>
+                <input type="text" id="college" name="college" required>
+            </div>
+
+            <div class="button-group">
+                <button type="button" class="btn-cancel" onclick="window.history.back()">Cancel</button>
+                <button type="submit" class="btn-register">Register</button>
+            </div>
+        </form>
+    </main>
+</body>
+</html>

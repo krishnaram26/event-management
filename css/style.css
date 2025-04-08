@@ -1,0 +1,404 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #0a0a13;
+    color: white;
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 2rem;
+}
+
+.nav-links a.active {
+    color: #007bff;
+}
+
+/* Main Content */
+main {
+    padding: 2rem;
+}
+
+.main-title {
+    font-size: 4rem;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    opacity: 0.8;
+}
+
+/* Events Grid */
+/* Update the events-grid class */
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Forces 4 columns */
+    gap: 2rem;
+    padding: 1rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Add media query for responsive design */
+@media (max-width: 1200px) {
+    .events-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .events-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.event-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    color: black;
+}
+
+.event-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.event-details {
+    padding: 1.5rem;
+}
+
+.event-details h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.event-details p {
+    color: #666;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+}
+
+.event-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.info-group {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+}
+
+.info-group span:first-child {
+    color: #666;
+}
+
+.info-group span:last-child {
+    font-weight: bold;
+}
+
+
+/* Add these styles at the end of your CSS file */
+
+.button-group {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.button-group button {
+    flex: 1;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.2s;
+}
+
+.button-group button:hover {
+    transform: translateY(-2px);
+}
+
+.btn-view {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+.btn-register {
+    background-color: #007bff;
+    color: white;
+}
+
+
+/* Add Font Awesome CDN in your HTML head */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css');
+
+/* Popup Styles */
+.event-popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+}
+
+.popup-content {
+    position: relative;
+    background: #1a1a2e;
+    width: 90%;
+    max-width: 800px;
+    margin: 2% auto;
+    padding: 20px;
+    border-radius: 10px;
+    max-height: 90vh;
+    overflow-y: auto;
+    color: white;
+}
+
+.close-popup {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.popup-image {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.popup-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.popup-title {
+    font-size: 2em;
+    margin-bottom: 15px;
+}
+
+.popup-description {
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.event-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.info-item i {
+    color: #007bff;
+}
+
+.event-coordinators {
+    margin-top: 30px;
+}
+
+.event-coordinators h3 {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.event-coordinators ul {
+    list-style: none;
+    padding: 0;
+}
+
+.event-coordinators li {
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.popup-actions {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.popup-actions .btn-register {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+}
+
+.popup-title {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+.popup-description {
+    margin-bottom: 2rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.1rem;
+}
+
+.event-details-grid {
+    display: grid;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.detail-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.2rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    transition: background-color 0.2s;
+}
+
+.detail-row:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.detail-row i {
+    margin-right: 1rem;
+    color: #007bff;
+    font-size: 1.2rem;
+    width: 24px;
+    text-align: center;
+}
+
+.detail-info {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.detail-info span:first-child {
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.detail-info span:last-child {
+    color: #fff;
+}
+
+.coordinators-section {
+    margin-top: 2.5rem;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+}
+
+.coordinators-section h3 {
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+    font-size: 1.3rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.coordinators-section h3 i {
+    margin-right: 0.8rem;
+    color: #007bff;
+    font-size: 1.2rem;
+}
+
+#coordinatorsList {
+    list-style: none;
+    padding-left: 2.2rem;
+    display: grid;
+    gap: 0.8rem;
+}
+
+#coordinatorsList li {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1rem;
+    position: relative;
+}
+
+#coordinatorsList li:before {
+    content: "•";
+    color: #007bff;
+    position: absolute;
+    left: -1.2rem;
+    font-size: 1.2rem;
+}
+.detail-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.detail-text strong {
+    color: #007bff;
+}
+
+.event-people {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.speakers h3, .coordinators h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #007bff;
+    margin-bottom: 1rem;
+}
+
+.event-people ul {
+    list-style: none;
+}
+
+.event-people li {
+    margin-bottom: 0.5rem;
+    color: #ccc;
+}

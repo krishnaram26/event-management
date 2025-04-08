@@ -1,0 +1,17 @@
+.DS_Store
+node_modules/
+*.log
+.env
+.env.local
+.env.*.local
+.vscode/
+.idea/
+*.swp
+*.swo
+*.swn
+*.bak
+*.tmp
+*.sublime*
+Thumbs.db
+*.php
+*.sql
