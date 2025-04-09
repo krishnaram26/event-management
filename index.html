@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Evendz</title>
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/script.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="js/script.js" defer></script>
 </head>
 <body>
     <!-- Navigation -->
@@ -26,13 +26,13 @@
         <h2 class="subtitle">of SRPTC</h2>
 
         <!-- Events Grid -->
-        <!-- Update the Tech Summit Card to use dynamic data -->
         <div class="events-grid">
-            <div class="event-card" data-event-id="2">
-                <img src="https://images.unsplash.com/photo-1540039155733-5bb30b53aa14?w=500" alt="Event Image">
+            <!-- Event Card 1 -->
+            <div class="event-card">
+                <img src="https://images.unsplash.com/photo-1540039155733-5bb30b53aa14?w=500" alt="Tech Summit">
                 <div class="event-details">
-                    <h3>Event Name</h3>
-                    <p>Event description goes here...</p>
+                    <h3>Tech Summit</h3>
+                    <p>Join us for a day of cutting-edge technology discussions, networking, and hands-on workshops with industry experts.</p>
                     <div class="event-info">
                         <div class="info-group">
                             <span>Time:</span>
@@ -40,20 +40,237 @@
                         </div>
                         <div class="info-group">
                             <span>Place:</span>
-                            <span>Main Hall</span>
+                            <span>Main Auditorium</span>
                         </div>
                         <div class="info-group">
                             <span>Date:</span>
-                            <span>2024-02-15</span>
+                            <span>15 Aug 2023</span>
                         </div>
                         <div class="info-group">
                             <span>Price:</span>
-                            <span>15₹/-</span>
+                            <span>500₹/-</span>
                         </div>
                     </div>
                     <div class="button-group">
-                        <button class="btn-view">View Details</button>
+                        <button class="btn-view" onclick="showEventDetails(1)">View Details</button>
+                        <button class="btn-register" onclick="window.location.href='register.html?event=1'">Register</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Event Card 2 -->
+            <div class="event-card">
+                <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=500" alt="Hackathon 2023">
+                <div class="event-details">
+                    <h3>Hackathon 2023</h3>
+                    <p>A 48-hour coding competition where teams build innovative solutions to real-world problems. Great prizes to be won!</p>
+                    <div class="event-info">
+                        <div class="info-group">
+                            <span>Time:</span>
+                            <span>9:00 AM</span>
+                        </div>
+                        <div class="info-group">
+                            <span>Place:</span>
+                            <span>CS Building</span>
+                        </div>
+                        <div class="info-group">
+                            <span>Date:</span>
+                            <span>20 Sep 2023</span>
+                        </div>
+                        <div class="info-group">
+                            <span>Price:</span>
+                            <span>300₹/-</span>
+                        </div>
+                    </div>
+                    <div class="button-group">
+                        <button class="btn-view" onclick="showEventDetails(2)">View Details</button>
                         <button class="btn-register" onclick="window.location.href='register.html?event=2'">Register</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Event Card 3 -->
+            <div class="event-card">
+                <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?w=500" alt="AI Workshop">
+                <div class="event-details">
+                    <h3>AI Workshop</h3>
+                    <p>Learn about artificial intelligence fundamentals, machine learning algorithms, and practical applications in this hands-on workshop.</p>
+                    <div class="event-info">
+                        <div class="info-group">
+                            <span>Time:</span>
+                            <span>2:00 PM</span>
+                        </div>
+                        <div class="info-group">
+                            <span>Place:</span>
+                            <span>Lab 101</span>
+                        </div>
+                        <div class="info-group">
+                            <span>Date:</span>
+                            <span>5 Oct 2023</span>
+                        </div>
+                        <div class="info-group">
+                            <span>Price:</span>
+                            <span>250₹/-</span>
+                        </div>
+                    </div>
+                    <div class="button-group">
+                        <button class="btn-view" onclick="showEventDetails(3)">View Details</button>
+                        <button class="btn-register" onclick="window.location.href='register.html?event=3'">Register</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Event Card 4 -->
+            <div class="event-card">
+                <img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=500" alt="Design Thinking">
+                <div class="event-details">
+                    <h3>Design Thinking</h3>
+                    <p>A creative workshop focused on user-centered design approaches to solve complex problems and create innovative solutions.</p>
+                    <div class="event-info">
+                        <div class="info-group">
+                            <span>Time:</span>
+                            <span>11:00 AM</span>
+                        </div>
+                        <div class="info-group">
+                            <span>Place:</span>
+                            <span>Design Studio</span>
+                        </div>
+                        <div class="info-group">
+                            <span>Date:</span>
+                            <span>12 Oct 2023</span>
+                        </div>
+                        <div class="info-group">
+                            <span>Price:</span>
+                            <span>400₹/-</span>
+                        </div>
+                    </div>
+                    <div class="button-group">
+                        <button class="btn-view" onclick="showEventDetails(4)">View Details</button>
+                        <button class="btn-register" onclick="window.location.href='register.html?event=4'">Register</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Event Card 5 -->
+            <div class="event-card">
+                <img src="https://images.unsplash.com/photo-1560439514-4e9645039924?w=500" alt="Robotics Competition">
+                <div class="event-details">
+                    <h3>Robotics Competition</h3>
+                    <p>Showcase your robotics skills in this exciting competition featuring autonomous robots, remote-controlled challenges, and more.</p>
+                    <div class="event-info">
+                        <div class="info-group">
+                            <span>Time:</span>
+                            <span>1:00 PM</span>
+                        </div>
+                        <div class="info-group">
+                            <span>Place:</span>
+                            <span>Engineering Block</span>
+                        </div>
+                        <div class="info-group">
+                            <span>Date:</span>
+                            <span>25 Oct 2023</span>
+                        </div>
+                        <div class="info-group">
+                            <span>Price:</span>
+                            <span>350₹/-</span>
+                        </div>
+                    </div>
+                    <div class="button-group">
+                        <button class="btn-view" onclick="showEventDetails(5)">View Details</button>
+                        <button class="btn-register" onclick="window.location.href='register.html?event=5'">Register</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Event Card 6 -->
+            <div class="event-card">
+                <img src="https://images.unsplash.com/photo-1591115765373-5207764f72e7?w=500" alt="Cyber Security Seminar">
+                <div class="event-details">
+                    <h3>Cyber Security Seminar</h3>
+                    <p>Learn about the latest threats, defense strategies, and best practices in cyber security from industry professionals.</p>
+                    <div class="event-info">
+                        <div class="info-group">
+                            <span>Time:</span>
+                            <span>3:30 PM</span>
+                        </div>
+                        <div class="info-group">
+                            <span>Place:</span>
+                            <span>Seminar Hall</span>
+                        </div>
+                        <div class="info-group">
+                            <span>Date:</span>
+                            <span>2 Nov 2023</span>
+                        </div>
+                        <div class="info-group">
+                            <span>Price:</span>
+                            <span>200₹/-</span>
+                        </div>
+                    </div>
+                    <div class="button-group">
+                        <button class="btn-view" onclick="showEventDetails(6)">View Details</button>
+                        <button class="btn-register" onclick="window.location.href='register.html?event=6'">Register</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Event Card 7 -->
+            <div class="event-card">
+                <img src="https://images.unsplash.com/photo-1551818255-e6e10975bc17?w=500" alt="Data Science Bootcamp">
+                <div class="event-details">
+                    <h3>Data Science Bootcamp</h3>
+                    <p>An intensive bootcamp covering data analysis, visualization, machine learning, and practical applications of data science.</p>
+                    <div class="event-info">
+                        <div class="info-group">
+                            <span>Time:</span>
+                            <span>9:30 AM</span>
+                        </div>
+                        <div class="info-group">
+                            <span>Place:</span>
+                            <span>Computer Center</span>
+                        </div>
+                        <div class="info-group">
+                            <span>Date:</span>
+                            <span>10 Nov 2023</span>
+                        </div>
+                        <div class="info-group">
+                            <span>Price:</span>
+                            <span>450₹/-</span>
+                        </div>
+                    </div>
+                    <div class="button-group">
+                        <button class="btn-view" onclick="showEventDetails(7)">View Details</button>
+                        <button class="btn-register" onclick="window.location.href='register.html?event=7'">Register</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Event Card 8 -->
+            <div class="event-card">
+                <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=500" alt="Gaming Tournament">
+                <div class="event-details">
+                    <h3>Gaming Tournament</h3>
+                    <p>Compete in popular esports titles and show off your gaming skills in this exciting tournament with prizes for top performers.</p>
+                    <div class="event-info">
+                        <div class="info-group">
+                            <span>Time:</span>
+                            <span>4:00 PM</span>
+                        </div>
+                        <div class="info-group">
+                            <span>Place:</span>
+                            <span>Recreation Center</span>
+                        </div>
+                        <div class="info-group">
+                            <span>Date:</span>
+                            <span>18 Nov 2023</span>
+                        </div>
+                        <div class="info-group">
+                            <span>Price:</span>
+                            <span>150₹/-</span>
+                        </div>
+                    </div>
+                    <div class="button-group">
+                        <button class="btn-view" onclick="showEventDetails(8)">View Details</button>
+                        <button class="btn-register" onclick="window.location.href='register.html?event=8'">Register</button>
                     </div>
                 </div>
             </div>
