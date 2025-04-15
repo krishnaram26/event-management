@@ -59,7 +59,7 @@ function createEventCard(event) {
             </div>
             <div class="button-group">
                 <button class="btn-view" onclick="showEventDetails(${event.id})">View Details</button>
-                <button class="btn-register" onclick="window.location.href='register.html?event=${event.id}'">Register</button>
+                <button class="btn-register" onclick="window.location.href='register.html'">Register</button>
             </div>
         </div>
     `;

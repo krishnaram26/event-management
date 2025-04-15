@@ -8,6 +8,12 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 }
 
 try {
+    // Validate that event_id is provided
+    if (empty($_POST['event_id'])) {
+        echo json_encode(['success' => false, 'message' => 'Please select an event']);
+        exit;
+    }
+    
     $data = [
         'regno' => $_POST['regno'],
         'name' => $_POST['name'],
