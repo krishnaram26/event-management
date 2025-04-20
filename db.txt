@@ -1,0 +1,59 @@
+-- Create the database
+CREATE DATABASE IF NOT EXISTS event_booking;
+USE event_booking;
+
+-- Create colleges table
+CREATE TABLE IF NOT EXISTS colleges (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(255) NOT NULL
+);
+
+-- Create events table
+CREATE TABLE IF NOT EXISTS events (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(255) NOT NULL,
+    description TEXT,
+    date DATE NOT NULL,
+    time VARCHAR(50) NOT NULL,
+    venue VARCHAR(255) NOT NULL,
+    price DECIMAL(10,2) NOT NULL,
+    image VARCHAR(255),
+    college_id INT,
+    speakers TEXT,
+    coordinators VARCHAR(255),
+    hosted_by VARCHAR(255),
+    coordinators_details TEXT,
+    FOREIGN KEY (college_id) REFERENCES colleges(id)
+);
+
+-- Create registrations table
+CREATE TABLE IF NOT EXISTS registrations (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    regno VARCHAR(50) NOT NULL,
+    name VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    phone VARCHAR(15) NOT NULL,
+    college VARCHAR(255) NOT NULL,
+    event_id INT,
+    registration_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (event_id) REFERENCES events(id)
+);
+
+-- Insert sample college data
+INSERT INTO colleges (name) VALUES 
+('NGP College'),
+('PSG College'),
+('Kumaraguru College');
+
+-- Insert sample event data (update as needed for your project)
+INSERT INTO events (id, name, description, date, time, venue, price, college_id, speakers, coordinators, hosted_by, coordinators_details) VALUES 
+(1, 'Cognito Clash', 'A technical symposium that challenges your mind.', '2024-11-11', '7:00 - 17:00', 'NGP College', 10.00, 1, 'Alan Joshua, Krishna Sriram', 'Alan Joshua, Krishna Sriram', NULL, NULL),
+(2, 'Tech Summit', 'Join us for an exciting tech summit featuring cutting-edge technologies, expert speakers, and hands-on workshops. Explore the future of technology and network with industry professionals in this day-long immersive experience.', '2024-11-12', '9:00 - 18:00', 'NGP College', 15.00, 1, 'John Doe, Jane Smith', 'Alex Kumar, Priya Raj', 'John Doe', 'Alex Kumar, Priya Raj'),
+(3, 'Code Wars', 'A competitive coding event for all levels.', '2024-11-13', '10:00 - 16:00', 'NGP College', 20.00, 1, 'Sonia Mehra, Rakesh Singh', 'Sonia Mehra, Rakesh Singh', NULL, NULL),
+(4, 'Hackathon 2023', 'A 48-hour coding competition where teams build innovative solutions to real-world problems. Great prizes to be won!', '2023-09-20', '9:00 AM', 'CS Building', 300.00, 1, 'Vikram Patel, Neha Sharma', 'Vikram Patel, Neha Sharma', NULL, NULL),
+(5, 'AI Workshop', 'Learn about artificial intelligence fundamentals, machine learning algorithms, and practical applications in this hands-on workshop.', '2023-10-05', '2:00 PM', 'Lab 101', 250.00, 1, 'Ritu Agarwal, Mohan Das', 'Ritu Agarwal, Mohan Das', NULL, NULL),
+(6, 'Web Dev Contest', 'A creative workshop focused on user-centered design principles to solve complex problems and create innovative solutions.', '2023-10-12', '11:00 AM', 'Design Studio', 400.00, 1, 'Deepak Rao, Sneha Kapoor', 'Deepak Rao, Sneha Kapoor', NULL, NULL),
+(7, 'Gaming Tournament', 'Compete in popular esports titles and show off your gaming skills in this exciting tournament with prizes for top performers.', '2023-11-18', '4:00 PM', 'Recreation Center', 150.00, 1, 'Rahul Verma, Kavya Pillai', 'Rahul Verma, Kavya Pillai', NULL, NULL),
+(8, 'Robotics Workshop', 'Showcase your robotics skills in this exciting competition featuring autonomous robots, remote-controlled challenges, and more.', '2023-10-25', '1:00 PM', 'Engineering Block', 350.00, 1, 'Kiran Kumar, Meena Iyer', 'Kiran Kumar, Meena Iyer', NULL, NULL);
+
+-- (Optional) Add more sample data as needed
