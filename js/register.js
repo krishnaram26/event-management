@@ -2,13 +2,21 @@ document.addEventListener('DOMContentLoaded', function() {
     // Instead of getting event from URL, we'll add a dropdown to select events
     const form = document.getElementById('registrationForm');
     
-    // Create event selection dropdown
+    // Create event selection dropdown with hardcoded options
     const eventSelectDiv = document.createElement('div');
     eventSelectDiv.className = 'form-group';
     eventSelectDiv.innerHTML = `
         <label for="event_id">Select Event:</label>
         <select id="event_id" name="event_id" required>
             <option value="">-- Select an event --</option>
+            <option value="1">Cognito Clash</option>
+            <option value="2">Tech Summit</option>
+            <option value="3">Code Wars</option>
+            <option value="4">Hackathon</option>
+            <option value="5">AI Workshop</option>
+            <option value="6">Web Dev Contest</option>
+            <option value="7">Gaming Tournament</option>
+            <option value="8">Robotics Workshop</option>
         </select>
     `;
     
@@ -42,6 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Function to load events for the dropdown
+    // Remove or comment out the loadEvents() function and its call
     function loadEvents() {
         fetch('php/get_events.php')
             .then(response => response.json())

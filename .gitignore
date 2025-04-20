@@ -1,6 +1,6 @@
 # PHP configuration files
 config.php
-php/config.php
+
 
 # Environment files
 .env
@@ -29,5 +29,5 @@ php_error.log
 *.tmp
 
 # Database files
-*.sql
+#*.sql
 *.sqlite
